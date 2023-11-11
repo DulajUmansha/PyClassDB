@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>resource/image/Transform Your MySQL Table to Python Class.png</file>
+        <file>resource/image/Mysql-host.png</file>
+    </qresource>
+</RCC>
