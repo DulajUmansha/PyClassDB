@@ -37,6 +37,7 @@ class MainWindow(QMainWindow):
         self.mainUI.credentialNextBtn.clicked.connect(self.pageCredentials.credentialNextBtn_clicked)
         self.mainUI.credentialBackBtn.clicked.connect(self.pageCredentials.credentialBackBtn_clicked)
         self.mainUI.databaseNextBtn.clicked.connect(self.pageDatabase.databaseNextBtn_clicked)
+        self.mainUI.databaseNextBtn.clicked.connect(self.pageTable.showTables)
         self.mainUI.databaseBackBtn.clicked.connect(self.pageDatabase.databaseBackBtn_clicked)
         self.mainUI.tableBackBtn.clicked.connect(self.pageTable.tableBackBtn_clicked)
         self.mainUI.summeryBackBtn.clicked.connect(self.pageSummery.summeryBackBtn_clicked)
