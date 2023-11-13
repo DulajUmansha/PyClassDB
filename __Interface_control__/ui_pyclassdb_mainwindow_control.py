@@ -11,6 +11,8 @@ from __Interface_control__.ui_pyclassdb_mainwindow_control_stackedWidgets.page_c
 from __Interface_control__.ui_pyclassdb_mainwindow_control_stackedWidgets.page_database import page_database
 from __Interface_control__.ui_pyclassdb_mainwindow_control_stackedWidgets.page_table import page_table
 from __Interface_control__.ui_pyclassdb_mainwindow_control_stackedWidgets.page_summery import page_summery
+from template.tmp_database import Tmp_Database
+from template.tmp_tables import Tmp_Tables
 
 
 class MainWindow(QMainWindow):
@@ -39,8 +41,17 @@ class MainWindow(QMainWindow):
         self.mainUI.databaseNextBtn.clicked.connect(self.pageDatabase.databaseNextBtn_clicked)
         self.mainUI.databaseNextBtn.clicked.connect(self.pageTable.showTables)
         self.mainUI.databaseBackBtn.clicked.connect(self.pageDatabase.databaseBackBtn_clicked)
+        self.mainUI.tableNextBtn.clicked.connect(self.tableNextBtn_clicked)
         self.mainUI.tableBackBtn.clicked.connect(self.pageTable.tableBackBtn_clicked)
         self.mainUI.summeryBackBtn.clicked.connect(self.pageSummery.summeryBackBtn_clicked)
+
+    def tableNextBtn_clicked(self):
+        tmpDatabase = Tmp_Database()
+        tmpDatabase.generate(self.host, self.credential, self.database)
+
+        tmpTable = Tmp_Tables()
+        tmpTable.generate_parent()
+        tmpTable.generate_child()#TODO
        
 
 
