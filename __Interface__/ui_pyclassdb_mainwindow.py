@@ -16,9 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QFormLayout, QFrame,
-    QGridLayout, QHBoxLayout, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
-    QStackedWidget, QWidget)
+    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+    QSpacerItem, QStackedWidget, QTableView, QWidget)
 # import rc_resource
 
 class Ui_MainWindow(object):
@@ -51,23 +51,13 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
-        self.label.setSizePolicy(sizePolicy)
-
-        self.gridLayout.addWidget(self.label, 2, 0, 1, 1, Qt.AlignHCenter)
-
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.stackedWidget.sizePolicy().hasHeightForWidth())
-        self.stackedWidget.setSizePolicy(sizePolicy1)
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.stackedWidget.sizePolicy().hasHeightForWidth())
+        self.stackedWidget.setSizePolicy(sizePolicy)
         self.stackedWidget.setFrameShape(QFrame.NoFrame)
         self.stackedWidget.setFrameShadow(QFrame.Plain)
         self.page_home = QWidget()
@@ -110,26 +100,31 @@ class Ui_MainWindow(object):
 
         self.lineEdit_host = QLineEdit(self.page_host)
         self.lineEdit_host.setObjectName(u"lineEdit_host")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.lineEdit_host.sizePolicy().hasHeightForWidth())
-        self.lineEdit_host.setSizePolicy(sizePolicy2)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.lineEdit_host.sizePolicy().hasHeightForWidth())
+        self.lineEdit_host.setSizePolicy(sizePolicy1)
         self.lineEdit_host.setMinimumSize(QSize(400, 50))
+        font1 = QFont()
+        font1.setPointSize(18)
+        self.lineEdit_host.setFont(font1)
+        self.lineEdit_host.setAutoFillBackground(False)
+        self.lineEdit_host.setMaxLength(15)
 
         self.gridLayout_3.addWidget(self.lineEdit_host, 5, 0, 1, 1, Qt.AlignHCenter)
 
         self.hostNextBtn = QPushButton(self.page_host)
         self.hostNextBtn.setObjectName(u"hostNextBtn")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.hostNextBtn.sizePolicy().hasHeightForWidth())
-        self.hostNextBtn.setSizePolicy(sizePolicy3)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.hostNextBtn.sizePolicy().hasHeightForWidth())
+        self.hostNextBtn.setSizePolicy(sizePolicy2)
         self.hostNextBtn.setMinimumSize(QSize(140, 40))
-        font1 = QFont()
-        font1.setPointSize(15)
-        self.hostNextBtn.setFont(font1)
+        font2 = QFont()
+        font2.setPointSize(15)
+        self.hostNextBtn.setFont(font2)
 
         self.gridLayout_3.addWidget(self.hostNextBtn, 6, 0, 1, 1, Qt.AlignHCenter)
 
@@ -153,8 +148,11 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.label_7 = QLabel(self.page_credentials)
         self.label_7.setObjectName(u"label_7")
-        sizePolicy.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
-        self.label_7.setSizePolicy(sizePolicy)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
+        self.label_7.setSizePolicy(sizePolicy3)
         self.label_7.setFont(font)
 
         self.gridLayout_4.addWidget(self.label_7, 2, 0, 1, 1, Qt.AlignHCenter)
@@ -166,7 +164,7 @@ class Ui_MainWindow(object):
         self.credentialNextBtn = QPushButton(self.page_credentials)
         self.credentialNextBtn.setObjectName(u"credentialNextBtn")
         self.credentialNextBtn.setMinimumSize(QSize(140, 40))
-        self.credentialNextBtn.setFont(font1)
+        self.credentialNextBtn.setFont(font2)
 
         self.gridLayout_4.addWidget(self.credentialNextBtn, 6, 0, 1, 1, Qt.AlignHCenter)
 
@@ -182,13 +180,14 @@ class Ui_MainWindow(object):
         self.formLayout.setObjectName(u"formLayout")
         self.label_5 = QLabel(self.page_credentials)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font1)
+        self.label_5.setFont(font2)
 
         self.formLayout.setWidget(0, QFormLayout.LabelRole, self.label_5)
 
         self.lineEdit_userName = QLineEdit(self.page_credentials)
         self.lineEdit_userName.setObjectName(u"lineEdit_userName")
         self.lineEdit_userName.setMinimumSize(QSize(400, 50))
+        self.lineEdit_userName.setFont(font1)
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.lineEdit_userName)
 
@@ -198,13 +197,14 @@ class Ui_MainWindow(object):
 
         self.label_6 = QLabel(self.page_credentials)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setFont(font1)
+        self.label_6.setFont(font2)
 
         self.formLayout.setWidget(2, QFormLayout.LabelRole, self.label_6)
 
         self.lineEdit_password = QLineEdit(self.page_credentials)
         self.lineEdit_password.setObjectName(u"lineEdit_password")
         self.lineEdit_password.setMinimumSize(QSize(400, 50))
+        self.lineEdit_password.setFont(font1)
         self.lineEdit_password.setEchoMode(QLineEdit.Password)
 
         self.formLayout.setWidget(2, QFormLayout.FieldRole, self.lineEdit_password)
@@ -238,9 +238,10 @@ class Ui_MainWindow(object):
 
         self.lineEdit_database = QLineEdit(self.page_database)
         self.lineEdit_database.setObjectName(u"lineEdit_database")
-        sizePolicy2.setHeightForWidth(self.lineEdit_database.sizePolicy().hasHeightForWidth())
-        self.lineEdit_database.setSizePolicy(sizePolicy2)
+        sizePolicy1.setHeightForWidth(self.lineEdit_database.sizePolicy().hasHeightForWidth())
+        self.lineEdit_database.setSizePolicy(sizePolicy1)
         self.lineEdit_database.setMinimumSize(QSize(400, 50))
+        self.lineEdit_database.setFont(font1)
 
         self.gridLayout_5.addWidget(self.lineEdit_database, 4, 0, 1, 1, Qt.AlignHCenter)
 
@@ -265,10 +266,10 @@ class Ui_MainWindow(object):
 
         self.databaseNextBtn = QPushButton(self.page_database)
         self.databaseNextBtn.setObjectName(u"databaseNextBtn")
-        sizePolicy3.setHeightForWidth(self.databaseNextBtn.sizePolicy().hasHeightForWidth())
-        self.databaseNextBtn.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.databaseNextBtn.sizePolicy().hasHeightForWidth())
+        self.databaseNextBtn.setSizePolicy(sizePolicy2)
         self.databaseNextBtn.setMinimumSize(QSize(140, 40))
-        self.databaseNextBtn.setFont(font1)
+        self.databaseNextBtn.setFont(font2)
 
         self.gridLayout_5.addWidget(self.databaseNextBtn, 6, 0, 1, 1, Qt.AlignHCenter)
 
@@ -282,32 +283,53 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_database)
         self.page_table = QWidget()
         self.page_table.setObjectName(u"page_table")
-        self.layoutWidget = QWidget(self.page_table)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(20, 110, 126, 45))
-        self.horizontalLayout = QHBoxLayout(self.layoutWidget)
+        self.gridLayout_6 = QGridLayout(self.page_table)
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.tableView = QTableView(self.page_table)
+        self.tableView.setObjectName(u"tableView")
+        self.tableView.setFont(font1)
+
+        self.gridLayout_6.addWidget(self.tableView, 2, 0, 1, 1)
+
+        self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.label_9 = QLabel(self.layoutWidget)
+        self.label_9 = QLabel(self.page_table)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setFont(font1)
+        self.label_9.setFont(font2)
 
-        self.horizontalLayout.addWidget(self.label_9)
+        self.horizontalLayout.addWidget(self.label_9, 0, Qt.AlignLeft)
 
-        self.checkBox = QCheckBox(self.layoutWidget)
+        self.checkBox = QCheckBox(self.page_table)
         self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setFont(font1)
+        self.checkBox.setFont(font2)
         self.checkBox.setIconSize(QSize(30, 30))
         self.checkBox.setChecked(True)
         self.checkBox.setTristate(False)
 
-        self.horizontalLayout.addWidget(self.checkBox)
+        self.horizontalLayout.addWidget(self.checkBox, 0, Qt.AlignRight)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+
+        self.gridLayout_6.addLayout(self.horizontalLayout, 1, 0, 1, 1)
 
         self.tableBackBtn = QPushButton(self.page_table)
         self.tableBackBtn.setObjectName(u"tableBackBtn")
-        self.tableBackBtn.setGeometry(QRect(0, 30, 51, 30))
+        self.tableBackBtn.setMaximumSize(QSize(34, 30))
         self.tableBackBtn.setIcon(icon)
         self.tableBackBtn.setIconSize(QSize(30, 30))
+
+        self.gridLayout_6.addWidget(self.tableBackBtn, 0, 0, 1, 1)
+
+        self.tableNextBtn = QPushButton(self.page_table)
+        self.tableNextBtn.setObjectName(u"tableNextBtn")
+        self.tableNextBtn.setMinimumSize(QSize(140, 40))
+        self.tableNextBtn.setFont(font2)
+
+        self.gridLayout_6.addWidget(self.tableNextBtn, 3, 0, 1, 1, Qt.AlignHCenter)
+
         self.stackedWidget.addWidget(self.page_table)
         self.page_summery = QWidget()
         self.page_summery.setObjectName(u"page_summery")
@@ -316,20 +338,32 @@ class Ui_MainWindow(object):
         self.summeryBackBtn.setGeometry(QRect(10, 20, 41, 29))
         self.summeryBackBtn.setIcon(icon)
         self.summeryBackBtn.setIconSize(QSize(30, 30))
+        self.pushButton_2 = QPushButton(self.page_summery)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setGeometry(QRect(290, 500, 140, 40))
+        self.pushButton_2.setMinimumSize(QSize(140, 40))
+        self.pushButton_2.setFont(font2)
         self.stackedWidget.addWidget(self.page_summery)
 
         self.gridLayout.addWidget(self.stackedWidget, 1, 0, 1, 1)
 
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
-        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
-        self.label_2.setSizePolicy(sizePolicy)
-        font2 = QFont()
-        font2.setPointSize(28)
-        font2.setBold(True)
-        self.label_2.setFont(font2)
+        sizePolicy3.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy3)
+        font3 = QFont()
+        font3.setPointSize(28)
+        font3.setBold(True)
+        self.label_2.setFont(font3)
 
         self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1, Qt.AlignHCenter)
+
+        self.label = QLabel(self.centralwidget)
+        self.label.setObjectName(u"label")
+        sizePolicy3.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy3)
+
+        self.gridLayout.addWidget(self.label, 2, 0, 1, 1, Qt.AlignHCenter)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -347,24 +381,31 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"All Right Reserved @ 2023", None))
         self.label_3.setText("")
         self.getStartBtn.setText(QCoreApplication.translate("MainWindow", u"Get Start", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Host", None))
+        self.lineEdit_host.setText(QCoreApplication.translate("MainWindow", u"localhost", None))
+        self.lineEdit_host.setPlaceholderText(QCoreApplication.translate("MainWindow", u"127.0.0.1", None))
         self.hostNextBtn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.hostBackBtn.setText("")
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Credentials", None))
         self.credentialNextBtn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"User Name", None))
+        self.lineEdit_userName.setText(QCoreApplication.translate("MainWindow", u"root", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Password", None))
+        self.lineEdit_password.setText(QCoreApplication.translate("MainWindow", u"master123@Umansha", None))
         self.credentialBackBtn.setText("")
+        self.lineEdit_database.setText(QCoreApplication.translate("MainWindow", u"store", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Database", None))
         self.databaseNextBtn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.databaseBackBtn.setText("")
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"ALL", None))
         self.checkBox.setText("")
         self.tableBackBtn.setText("")
+        self.tableNextBtn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.summeryBackBtn.setText("")
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Finished", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"PyClassDB", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"All Right Reserved @ 2023", None))
     # retranslateUi
 

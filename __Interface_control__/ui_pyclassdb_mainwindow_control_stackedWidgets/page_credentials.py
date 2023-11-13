@@ -2,9 +2,9 @@ from __Interface__.ui_pyclassdb_mainwindow import Ui_MainWindow
 from Database.credential import Credential
 
 class page_credentials:
-    def __init__(self, mainUI:Ui_MainWindow) -> None:
+    def __init__(self, mainUI:Ui_MainWindow, credential:Credential) -> None:
         self.mainUI = mainUI
-        self.credential = Credential()
+        self.credential = credential
 
     def credentialNextBtn_clicked(self):
         self.mainUI.stackedWidget.setCurrentIndex(3)

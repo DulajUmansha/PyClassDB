@@ -2,9 +2,9 @@ from __Interface__.ui_pyclassdb_mainwindow import Ui_MainWindow
 from Database.database import Database
 
 class page_database:
-    def __init__(self, mainUI:Ui_MainWindow) -> None:
+    def __init__(self, mainUI:Ui_MainWindow, database:Database) -> None:
         self.mainUI = mainUI
-        self.database = Database()
+        self.database = database
 
     def databaseNextBtn_clicked(self):
         self.mainUI.stackedWidget.setCurrentIndex(4)

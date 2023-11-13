@@ -1,5 +1,8 @@
 import sys
 from PySide6.QtWidgets import QMainWindow
+from Database.credential import Credential
+from Database.database import Database
+from Database.host import Host
 from __Interface__.rc_resource import *
 from __Interface__.ui_pyclassdb_mainwindow import Ui_MainWindow
 from __Interface_control__.ui_pyclassdb_mainwindow_control_stackedWidgets.page_home import page_home
@@ -15,10 +18,14 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.mainUI = Ui_MainWindow()
         self.mainUI.setupUi(self)
+        self.host = Host()
+        self.credential = Credential()
+        self.database = Database(self.host,self.credential)
+
         self.pageHome = page_home(self.mainUI)
-        self.pageHost = page_host(self.mainUI)
-        self.pageCredentials = page_credentials(self.mainUI)
-        self.pageDatabase = page_database(self.mainUI)
+        self.pageHost = page_host(self.mainUI,self.host)
+        self.pageCredentials = page_credentials(self.mainUI,self.credential)
+        self.pageDatabase = page_database(self.mainUI,self.database)
         self.pageTable = page_table(self.mainUI)
         self.pageSummery = page_summery(self.mainUI)
         self.buttonClicked_connect()
