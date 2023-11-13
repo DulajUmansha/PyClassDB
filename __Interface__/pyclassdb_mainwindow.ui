@@ -43,7 +43,7 @@ QPushButton:Hover{
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0" alignment="Qt::AlignHCenter|Qt::AlignBottom">
+    <item row="2" column="0" alignment="Qt::AlignHCenter">
      <widget class="QLabel" name="label">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -53,25 +53,6 @@ QPushButton:Hover{
       </property>
       <property name="text">
        <string>All Right Reserved @ 2023</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" alignment="Qt::AlignHCenter|Qt::AlignTop">
-     <widget class="QLabel" name="label_2">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>28</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>PyClassDB</string>
       </property>
      </widget>
     </item>
@@ -126,7 +107,19 @@ QPushButton:Hover{
       </widget>
       <widget class="QWidget" name="page_host">
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="0">
+        <item row="2" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Host</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
          <spacer name="verticalSpacer_4">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -139,7 +132,39 @@ QPushButton:Hover{
           </property>
          </spacer>
         </item>
+        <item row="7" column="0">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>319</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item row="5" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLineEdit" name="lineEdit_host">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0" alignment="Qt::AlignHCenter">
          <widget class="QPushButton" name="hostNextBtn">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -163,51 +188,7 @@ QPushButton:Hover{
           </property>
          </widget>
         </item>
-        <item row="1" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="label_4">
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Host</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <spacer name="verticalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Preferred</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>319</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="4" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLineEdit" name="lineEdit_host">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>400</width>
-            <height>50</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
+        <item row="3" column="0">
          <spacer name="verticalSpacer">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -223,11 +204,80 @@ QPushButton:Hover{
           </property>
          </spacer>
         </item>
+        <item row="0" column="0" alignment="Qt::AlignLeft">
+         <widget class="QPushButton" name="hostBackBtn">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/icon/resource/icon/chevron-left.svg</normaloff>:/icon/resource/icon/chevron-left.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_credentials">
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="6" column="0">
+        <item row="2" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Credentials</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>100</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="6" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QPushButton" name="credentialNextBtn">
+          <property name="minimumSize">
+           <size>
+            <width>140</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Next</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
          <spacer name="verticalSpacer_5">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -240,7 +290,23 @@ QPushButton:Hover{
           </property>
          </spacer>
         </item>
-        <item row="3" column="0">
+        <item row="5" column="0">
+         <spacer name="verticalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="0">
          <layout class="QFormLayout" name="formLayout">
           <item row="0" column="0">
            <widget class="QLabel" name="label_5">
@@ -300,11 +366,14 @@ QPushButton:Hover{
               <height>50</height>
              </size>
             </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
            </widget>
           </item>
          </layout>
         </item>
-        <item row="2" column="0">
+        <item row="3" column="0">
          <spacer name="verticalSpacer_2">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -320,79 +389,28 @@ QPushButton:Hover{
           </property>
          </spacer>
         </item>
-        <item row="5" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QPushButton" name="credentialNextBtn">
-          <property name="minimumSize">
-           <size>
-            <width>140</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>15</pointsize>
-           </font>
-          </property>
+        <item row="0" column="0" alignment="Qt::AlignLeft">
+         <widget class="QPushButton" name="credentialBackBtn">
           <property name="text">
-           <string>Next</string>
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/icon/resource/icon/chevron-left.svg</normaloff>:/icon/resource/icon/chevron-left.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
           </property>
          </widget>
-        </item>
-        <item row="0" column="0">
-         <spacer name="verticalSpacer_6">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>100</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="1" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="label_7">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Credentials</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <spacer name="verticalSpacer_8">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Preferred</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_database">
        <layout class="QGridLayout" name="gridLayout_5">
-        <item row="0" column="0">
+        <item row="1" column="0">
          <spacer name="verticalSpacer_9">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -405,7 +423,86 @@ QPushButton:Hover{
           </property>
          </spacer>
         </item>
-        <item row="5" column="0" alignment="Qt::AlignHCenter">
+        <item row="7" column="0">
+         <spacer name="verticalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>180</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLineEdit" name="lineEdit_database">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Database</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <spacer name="verticalSpacer_12">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0">
+         <spacer name="verticalSpacer_11">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>100</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="6" column="0" alignment="Qt::AlignHCenter">
          <widget class="QPushButton" name="databaseNextBtn">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -429,84 +526,22 @@ QPushButton:Hover{
           </property>
          </widget>
         </item>
-        <item row="1" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="label_8">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
+        <item row="0" column="0" alignment="Qt::AlignLeft">
+         <widget class="QPushButton" name="databaseBackBtn">
           <property name="text">
-           <string>Database</string>
+           <string/>
           </property>
-         </widget>
-        </item>
-        <item row="3" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLineEdit" name="lineEdit_database">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/icon/resource/icon/chevron-left.svg</normaloff>:/icon/resource/icon/chevron-left.svg</iconset>
           </property>
-          <property name="minimumSize">
+          <property name="iconSize">
            <size>
-            <width>400</width>
-            <height>50</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
          </widget>
-        </item>
-        <item row="6" column="0">
-         <spacer name="verticalSpacer_10">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>180</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="2" column="0">
-         <spacer name="verticalSpacer_11">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Preferred</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>100</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="4" column="0">
-         <spacer name="verticalSpacer_12">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Preferred</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </widget>
@@ -514,8 +549,8 @@ QPushButton:Hover{
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>50</y>
+          <x>20</x>
+          <y>110</y>
           <width>126</width>
           <height>45</height>
          </rect>
@@ -559,8 +594,74 @@ QPushButton:Hover{
          </item>
         </layout>
        </widget>
+       <widget class="QPushButton" name="tableBackBtn">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>30</y>
+          <width>51</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resource.qrc">
+          <normaloff>:/icon/resource/icon/chevron-left.svg</normaloff>:/icon/resource/icon/chevron-left.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
       </widget>
-      <widget class="QWidget" name="page_summery"/>
+      <widget class="QWidget" name="page_summery">
+       <widget class="QPushButton" name="summeryBackBtn">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>41</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resource.qrc">
+          <normaloff>:/icon/resource/icon/chevron-left.svg</normaloff>:/icon/resource/icon/chevron-left.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+    <item row="0" column="0" alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="label_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>28</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>PyClassDB</string>
+      </property>
      </widget>
     </item>
    </layout>
@@ -569,5 +670,70 @@ QPushButton:Hover{
  <resources>
   <include location="resource.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>lineEdit_host</sender>
+   <signal>returnPressed()</signal>
+   <receiver>hostNextBtn</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>417</x>
+     <y>309</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>417</x>
+     <y>368</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_userName</sender>
+   <signal>returnPressed()</signal>
+   <receiver>lineEdit_password</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>468</x>
+     <y>421</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>512</x>
+     <y>483</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_password</sender>
+   <signal>returnPressed()</signal>
+   <receiver>credentialNextBtn</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>486</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
+     <y>572</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_database</sender>
+   <signal>returnPressed()</signal>
+   <receiver>databaseNextBtn</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>406</x>
+     <y>378</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>407</x>
+     <y>439</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

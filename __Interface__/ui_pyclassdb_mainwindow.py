@@ -59,18 +59,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy)
 
-        self.gridLayout.addWidget(self.label, 2, 0, 1, 1, Qt.AlignHCenter|Qt.AlignBottom)
-
-        self.label_2 = QLabel(self.centralwidget)
-        self.label_2.setObjectName(u"label_2")
-        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
-        self.label_2.setSizePolicy(sizePolicy)
-        font = QFont()
-        font.setPointSize(28)
-        font.setBold(True)
-        self.label_2.setFont(font)
-
-        self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1, Qt.AlignHCenter|Qt.AlignTop)
+        self.gridLayout.addWidget(self.label, 2, 0, 1, 1, Qt.AlignHCenter)
 
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
@@ -94,9 +83,9 @@ class Ui_MainWindow(object):
 
         self.getStartBtn = QPushButton(self.page_home)
         self.getStartBtn.setObjectName(u"getStartBtn")
-        font1 = QFont()
-        font1.setPointSize(20)
-        self.getStartBtn.setFont(font1)
+        font = QFont()
+        font.setPointSize(20)
+        self.getStartBtn.setFont(font)
 
         self.gridLayout_2.addWidget(self.getStartBtn, 1, 0, 1, 1)
 
@@ -105,63 +94,95 @@ class Ui_MainWindow(object):
         self.page_host.setObjectName(u"page_host")
         self.gridLayout_3 = QGridLayout(self.page_host)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.verticalSpacer_4 = QSpacerItem(20, 140, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_3.addItem(self.verticalSpacer_4, 0, 0, 1, 1)
-
-        self.hostNextBtn = QPushButton(self.page_host)
-        self.hostNextBtn.setObjectName(u"hostNextBtn")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.hostNextBtn.sizePolicy().hasHeightForWidth())
-        self.hostNextBtn.setSizePolicy(sizePolicy2)
-        self.hostNextBtn.setMinimumSize(QSize(140, 40))
-        font2 = QFont()
-        font2.setPointSize(15)
-        self.hostNextBtn.setFont(font2)
-
-        self.gridLayout_3.addWidget(self.hostNextBtn, 5, 0, 1, 1, Qt.AlignHCenter)
-
         self.label_4 = QLabel(self.page_host)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setFont(font1)
+        self.label_4.setFont(font)
 
-        self.gridLayout_3.addWidget(self.label_4, 1, 0, 1, 1, Qt.AlignHCenter)
+        self.gridLayout_3.addWidget(self.label_4, 2, 0, 1, 1, Qt.AlignHCenter)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 140, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout_3.addItem(self.verticalSpacer_4, 1, 0, 1, 1)
 
         self.verticalSpacer_3 = QSpacerItem(20, 319, QSizePolicy.Minimum, QSizePolicy.Preferred)
 
-        self.gridLayout_3.addItem(self.verticalSpacer_3, 6, 0, 1, 1)
+        self.gridLayout_3.addItem(self.verticalSpacer_3, 7, 0, 1, 1)
 
         self.lineEdit_host = QLineEdit(self.page_host)
         self.lineEdit_host.setObjectName(u"lineEdit_host")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.lineEdit_host.sizePolicy().hasHeightForWidth())
-        self.lineEdit_host.setSizePolicy(sizePolicy3)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.lineEdit_host.sizePolicy().hasHeightForWidth())
+        self.lineEdit_host.setSizePolicy(sizePolicy2)
         self.lineEdit_host.setMinimumSize(QSize(400, 50))
 
-        self.gridLayout_3.addWidget(self.lineEdit_host, 4, 0, 1, 1, Qt.AlignHCenter)
+        self.gridLayout_3.addWidget(self.lineEdit_host, 5, 0, 1, 1, Qt.AlignHCenter)
+
+        self.hostNextBtn = QPushButton(self.page_host)
+        self.hostNextBtn.setObjectName(u"hostNextBtn")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.hostNextBtn.sizePolicy().hasHeightForWidth())
+        self.hostNextBtn.setSizePolicy(sizePolicy3)
+        self.hostNextBtn.setMinimumSize(QSize(140, 40))
+        font1 = QFont()
+        font1.setPointSize(15)
+        self.hostNextBtn.setFont(font1)
+
+        self.gridLayout_3.addWidget(self.hostNextBtn, 6, 0, 1, 1, Qt.AlignHCenter)
 
         self.verticalSpacer = QSpacerItem(20, 100, QSizePolicy.Minimum, QSizePolicy.Preferred)
 
-        self.gridLayout_3.addItem(self.verticalSpacer, 2, 0, 1, 1)
+        self.gridLayout_3.addItem(self.verticalSpacer, 3, 0, 1, 1)
+
+        self.hostBackBtn = QPushButton(self.page_host)
+        self.hostBackBtn.setObjectName(u"hostBackBtn")
+        icon = QIcon()
+        icon.addFile(u":/icon/resource/icon/chevron-left.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.hostBackBtn.setIcon(icon)
+        self.hostBackBtn.setIconSize(QSize(30, 30))
+
+        self.gridLayout_3.addWidget(self.hostBackBtn, 0, 0, 1, 1, Qt.AlignLeft)
 
         self.stackedWidget.addWidget(self.page_host)
         self.page_credentials = QWidget()
         self.page_credentials.setObjectName(u"page_credentials")
         self.gridLayout_4 = QGridLayout(self.page_credentials)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.label_7 = QLabel(self.page_credentials)
+        self.label_7.setObjectName(u"label_7")
+        sizePolicy.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
+        self.label_7.setSizePolicy(sizePolicy)
+        self.label_7.setFont(font)
+
+        self.gridLayout_4.addWidget(self.label_7, 2, 0, 1, 1, Qt.AlignHCenter)
+
+        self.verticalSpacer_6 = QSpacerItem(20, 100, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout_4.addItem(self.verticalSpacer_6, 1, 0, 1, 1)
+
+        self.credentialNextBtn = QPushButton(self.page_credentials)
+        self.credentialNextBtn.setObjectName(u"credentialNextBtn")
+        self.credentialNextBtn.setMinimumSize(QSize(140, 40))
+        self.credentialNextBtn.setFont(font1)
+
+        self.gridLayout_4.addWidget(self.credentialNextBtn, 6, 0, 1, 1, Qt.AlignHCenter)
+
         self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout_4.addItem(self.verticalSpacer_5, 6, 0, 1, 1)
+        self.gridLayout_4.addItem(self.verticalSpacer_5, 7, 0, 1, 1)
+
+        self.verticalSpacer_8 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Preferred)
+
+        self.gridLayout_4.addItem(self.verticalSpacer_8, 5, 0, 1, 1)
 
         self.formLayout = QFormLayout()
         self.formLayout.setObjectName(u"formLayout")
         self.label_5 = QLabel(self.page_credentials)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font2)
+        self.label_5.setFont(font1)
 
         self.formLayout.setWidget(0, QFormLayout.LabelRole, self.label_5)
 
@@ -177,63 +198,51 @@ class Ui_MainWindow(object):
 
         self.label_6 = QLabel(self.page_credentials)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setFont(font2)
+        self.label_6.setFont(font1)
 
         self.formLayout.setWidget(2, QFormLayout.LabelRole, self.label_6)
 
         self.lineEdit_password = QLineEdit(self.page_credentials)
         self.lineEdit_password.setObjectName(u"lineEdit_password")
         self.lineEdit_password.setMinimumSize(QSize(400, 50))
+        self.lineEdit_password.setEchoMode(QLineEdit.Password)
 
         self.formLayout.setWidget(2, QFormLayout.FieldRole, self.lineEdit_password)
 
 
-        self.gridLayout_4.addLayout(self.formLayout, 3, 0, 1, 1)
+        self.gridLayout_4.addLayout(self.formLayout, 4, 0, 1, 1)
 
         self.verticalSpacer_2 = QSpacerItem(20, 100, QSizePolicy.Minimum, QSizePolicy.Preferred)
 
-        self.gridLayout_4.addItem(self.verticalSpacer_2, 2, 0, 1, 1)
+        self.gridLayout_4.addItem(self.verticalSpacer_2, 3, 0, 1, 1)
 
-        self.credentialNextBtn = QPushButton(self.page_credentials)
-        self.credentialNextBtn.setObjectName(u"credentialNextBtn")
-        self.credentialNextBtn.setMinimumSize(QSize(140, 40))
-        self.credentialNextBtn.setFont(font2)
+        self.credentialBackBtn = QPushButton(self.page_credentials)
+        self.credentialBackBtn.setObjectName(u"credentialBackBtn")
+        self.credentialBackBtn.setIcon(icon)
+        self.credentialBackBtn.setIconSize(QSize(30, 30))
 
-        self.gridLayout_4.addWidget(self.credentialNextBtn, 5, 0, 1, 1, Qt.AlignHCenter)
-
-        self.verticalSpacer_6 = QSpacerItem(20, 140, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_4.addItem(self.verticalSpacer_6, 0, 0, 1, 1)
-
-        self.label_7 = QLabel(self.page_credentials)
-        self.label_7.setObjectName(u"label_7")
-        sizePolicy.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
-        self.label_7.setSizePolicy(sizePolicy)
-        self.label_7.setFont(font1)
-
-        self.gridLayout_4.addWidget(self.label_7, 1, 0, 1, 1, Qt.AlignHCenter)
-
-        self.verticalSpacer_8 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Preferred)
-
-        self.gridLayout_4.addItem(self.verticalSpacer_8, 4, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.credentialBackBtn, 0, 0, 1, 1, Qt.AlignLeft)
 
         self.stackedWidget.addWidget(self.page_credentials)
         self.page_database = QWidget()
         self.page_database.setObjectName(u"page_database")
         self.gridLayout_5 = QGridLayout(self.page_database)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.verticalSpacer_9 = QSpacerItem(20, 140, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_9 = QSpacerItem(20, 100, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout_5.addItem(self.verticalSpacer_9, 0, 0, 1, 1)
+        self.gridLayout_5.addItem(self.verticalSpacer_9, 1, 0, 1, 1)
 
-        self.databaseNextBtn = QPushButton(self.page_database)
-        self.databaseNextBtn.setObjectName(u"databaseNextBtn")
-        sizePolicy2.setHeightForWidth(self.databaseNextBtn.sizePolicy().hasHeightForWidth())
-        self.databaseNextBtn.setSizePolicy(sizePolicy2)
-        self.databaseNextBtn.setMinimumSize(QSize(140, 40))
-        self.databaseNextBtn.setFont(font2)
+        self.verticalSpacer_10 = QSpacerItem(20, 180, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout_5.addWidget(self.databaseNextBtn, 5, 0, 1, 1, Qt.AlignHCenter)
+        self.gridLayout_5.addItem(self.verticalSpacer_10, 7, 0, 1, 1)
+
+        self.lineEdit_database = QLineEdit(self.page_database)
+        self.lineEdit_database.setObjectName(u"lineEdit_database")
+        sizePolicy2.setHeightForWidth(self.lineEdit_database.sizePolicy().hasHeightForWidth())
+        self.lineEdit_database.setSizePolicy(sizePolicy2)
+        self.lineEdit_database.setMinimumSize(QSize(400, 50))
+
+        self.gridLayout_5.addWidget(self.lineEdit_database, 4, 0, 1, 1, Qt.AlignHCenter)
 
         self.label_8 = QLabel(self.page_database)
         self.label_8.setObjectName(u"label_8")
@@ -242,64 +251,93 @@ class Ui_MainWindow(object):
         sizePolicy4.setVerticalStretch(0)
         sizePolicy4.setHeightForWidth(self.label_8.sizePolicy().hasHeightForWidth())
         self.label_8.setSizePolicy(sizePolicy4)
-        self.label_8.setFont(font1)
+        self.label_8.setFont(font)
 
-        self.gridLayout_5.addWidget(self.label_8, 1, 0, 1, 1, Qt.AlignHCenter)
-
-        self.lineEdit_database = QLineEdit(self.page_database)
-        self.lineEdit_database.setObjectName(u"lineEdit_database")
-        sizePolicy3.setHeightForWidth(self.lineEdit_database.sizePolicy().hasHeightForWidth())
-        self.lineEdit_database.setSizePolicy(sizePolicy3)
-        self.lineEdit_database.setMinimumSize(QSize(400, 50))
-
-        self.gridLayout_5.addWidget(self.lineEdit_database, 3, 0, 1, 1, Qt.AlignHCenter)
-
-        self.verticalSpacer_10 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_5.addItem(self.verticalSpacer_10, 6, 0, 1, 1)
-
-        self.verticalSpacer_11 = QSpacerItem(20, 100, QSizePolicy.Minimum, QSizePolicy.Preferred)
-
-        self.gridLayout_5.addItem(self.verticalSpacer_11, 2, 0, 1, 1)
+        self.gridLayout_5.addWidget(self.label_8, 2, 0, 1, 1, Qt.AlignHCenter)
 
         self.verticalSpacer_12 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Preferred)
 
-        self.gridLayout_5.addItem(self.verticalSpacer_12, 4, 0, 1, 1)
+        self.gridLayout_5.addItem(self.verticalSpacer_12, 5, 0, 1, 1)
+
+        self.verticalSpacer_11 = QSpacerItem(20, 100, QSizePolicy.Minimum, QSizePolicy.Preferred)
+
+        self.gridLayout_5.addItem(self.verticalSpacer_11, 3, 0, 1, 1)
+
+        self.databaseNextBtn = QPushButton(self.page_database)
+        self.databaseNextBtn.setObjectName(u"databaseNextBtn")
+        sizePolicy3.setHeightForWidth(self.databaseNextBtn.sizePolicy().hasHeightForWidth())
+        self.databaseNextBtn.setSizePolicy(sizePolicy3)
+        self.databaseNextBtn.setMinimumSize(QSize(140, 40))
+        self.databaseNextBtn.setFont(font1)
+
+        self.gridLayout_5.addWidget(self.databaseNextBtn, 6, 0, 1, 1, Qt.AlignHCenter)
+
+        self.databaseBackBtn = QPushButton(self.page_database)
+        self.databaseBackBtn.setObjectName(u"databaseBackBtn")
+        self.databaseBackBtn.setIcon(icon)
+        self.databaseBackBtn.setIconSize(QSize(30, 30))
+
+        self.gridLayout_5.addWidget(self.databaseBackBtn, 0, 0, 1, 1, Qt.AlignLeft)
 
         self.stackedWidget.addWidget(self.page_database)
         self.page_table = QWidget()
         self.page_table.setObjectName(u"page_table")
         self.layoutWidget = QWidget(self.page_table)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(30, 50, 126, 45))
+        self.layoutWidget.setGeometry(QRect(20, 110, 126, 45))
         self.horizontalLayout = QHBoxLayout(self.layoutWidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.label_9 = QLabel(self.layoutWidget)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setFont(font2)
+        self.label_9.setFont(font1)
 
         self.horizontalLayout.addWidget(self.label_9)
 
         self.checkBox = QCheckBox(self.layoutWidget)
         self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setFont(font2)
+        self.checkBox.setFont(font1)
         self.checkBox.setIconSize(QSize(30, 30))
         self.checkBox.setChecked(True)
         self.checkBox.setTristate(False)
 
         self.horizontalLayout.addWidget(self.checkBox)
 
+        self.tableBackBtn = QPushButton(self.page_table)
+        self.tableBackBtn.setObjectName(u"tableBackBtn")
+        self.tableBackBtn.setGeometry(QRect(0, 30, 51, 30))
+        self.tableBackBtn.setIcon(icon)
+        self.tableBackBtn.setIconSize(QSize(30, 30))
         self.stackedWidget.addWidget(self.page_table)
         self.page_summery = QWidget()
         self.page_summery.setObjectName(u"page_summery")
+        self.summeryBackBtn = QPushButton(self.page_summery)
+        self.summeryBackBtn.setObjectName(u"summeryBackBtn")
+        self.summeryBackBtn.setGeometry(QRect(10, 20, 41, 29))
+        self.summeryBackBtn.setIcon(icon)
+        self.summeryBackBtn.setIconSize(QSize(30, 30))
         self.stackedWidget.addWidget(self.page_summery)
 
         self.gridLayout.addWidget(self.stackedWidget, 1, 0, 1, 1)
 
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
+        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy)
+        font2 = QFont()
+        font2.setPointSize(28)
+        font2.setBold(True)
+        self.label_2.setFont(font2)
+
+        self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1, Qt.AlignHCenter)
+
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
+        self.lineEdit_host.returnPressed.connect(self.hostNextBtn.click)
+        self.lineEdit_userName.returnPressed.connect(self.lineEdit_password.setFocus)
+        self.lineEdit_password.returnPressed.connect(self.credentialNextBtn.click)
+        self.lineEdit_database.returnPressed.connect(self.databaseNextBtn.click)
 
         self.stackedWidget.setCurrentIndex(0)
 
@@ -310,18 +348,23 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"All Right Reserved @ 2023", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"PyClassDB", None))
         self.label_3.setText("")
         self.getStartBtn.setText(QCoreApplication.translate("MainWindow", u"Get Start", None))
-        self.hostNextBtn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Host", None))
+        self.hostNextBtn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
+        self.hostBackBtn.setText("")
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Credentials", None))
+        self.credentialNextBtn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"User Name", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Password", None))
-        self.credentialNextBtn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Credentials", None))
-        self.databaseNextBtn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
+        self.credentialBackBtn.setText("")
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Database", None))
+        self.databaseNextBtn.setText(QCoreApplication.translate("MainWindow", u"Next", None))
+        self.databaseBackBtn.setText("")
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"ALL", None))
         self.checkBox.setText("")
+        self.tableBackBtn.setText("")
+        self.summeryBackBtn.setText("")
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"PyClassDB", None))
     # retranslateUi
 
