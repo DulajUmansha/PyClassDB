@@ -32,3 +32,8 @@ Make sure you have the following installed:
    ```bash
    git clone https://github.com/DulajUmansha/PyClassDB.git
    ```
+
+## Example
+
+![Screenshot 2023-11-14 144639](https://github.com/DulajUmansha/PyClassDB/assets/89386135/eeff8cf7-5bee-4823-a3ca-c92f80398ed9) ![Screenshot 2023-11-14 144742](https://github.com/DulajUmansha/PyClassDB/assets/89386135/ca584c30-87ef-4586-afb8-edbdd08fc1d1)![Screenshot 2023-11-14 144847](https://github.com/DulajUmansha/PyClassDB/assets/89386135/3cf7fff7-68f0-4fb0-89d8-e8e79acfeb58)
+
