@@ -1,7 +1,13 @@
+import os
+from PySide6.QtSql import QSqlQuery
+
 class Tmp_Tables:
     def __init__(self) -> None:
         self.parent_code = None
         self.child_code = None
+        self._init_variables = []
+        self.table_variable = []
+        self.getter_setter = []
 
     def load_the_parentCode(self):
         self.parent_code = """ 
@@ -143,15 +149,73 @@ class Table:
 
         """
 
-    def load_the_childCode(self):
+    def load_the_childCode(self,tableName):
         self.child_code = """
-        """
+from database.table import Table
+
+class """ "{}".format(tableName)+"""(Table):
+\tdef __init__(self) -> None:
+\t\tsuper(""" "{}".format(tableName)+""",self).__init__()
+\t\tself.tableName = """ "{}".format(tableName)+""" #self.__class__.__name__
+\t\t"""
+        for var in self._init_variables:
+            self.child_code = self.child_code + var
+        
+        for func in self.getter_setter:
+            self.child_code = self.child_code + func
+
+        self.child_code = self.child_code + """
+\tdef retriveData(self):
+\t\tself.set_tableName(self.tableName)
+\t\treturn super().retriveData()
+
+\tdef insertData(self, table=None, *args, **data) -> bool:
+\t\tself.set_tableName(self.tableName)
+\t\treturn super().insertData(table, *args, **data)
+
+\tdef updateData(self, table=None, where=None, *args, **data) -> bool:
+\t\tself.set_tableName(self.tableName)
+\t\treturn super().updateData(table, where, *args, **data)
+"""
+
+    def fetch_variables(self,tableName):
+        self.table_variable = []
+        tableColumnQuery = "SHOW columns FROM {}".format(tableName)
+        tableColumnQuery = QSqlQuery(tableColumnQuery)
+        while tableColumnQuery.next():
+            fieldData = tableColumnQuery.record().indexOf('Field')
+            self.table_variable.append(tableColumnQuery.value(fieldData))
+
+    def load_the_childCode_variables(self):
+        self._init_variables = []
+        for var in self.table_variable:
+            self._init_variables.append("self."+var+" = None\n\t\t")
+    
+    def load_getters_setters(self):
+        self.getter_setter = []
+        for var in self.table_variable:
+            self.getter_setter.append("\n\tdef get_{variable}(self):\n\t\treturn self.{variable}\n\n\tdef set_{variable}(self,value):\n\t\tself.{variable} = value\n".format(variable = var))
 
     def generate_parent(self):
         self.load_the_parentCode()
-        file = open('table.py','w')
+        self.createFolder("output/database/")
+        file = open('output//database//table.py','w')
         file.write(self.parent_code)
         file.close()
 
-    def generate_child(self):
-        pass
+    def generate_child(self,tableNames):
+        for tableName in tableNames:
+            tableName = tableName[0]
+            self.fetch_variables(tableName)
+            self.load_the_childCode_variables()
+            self.load_getters_setters()
+            self.load_the_childCode(tableName)
+            self.createFolder("output/database/")
+            file = open('output//database//{}.py'.format(tableName),'w')
+            file.write(self.child_code)
+            file.close()
+            
+    def createFolder(self,path):
+        if not os.path.exists(path):
+            os.makedirs(path)
+        return

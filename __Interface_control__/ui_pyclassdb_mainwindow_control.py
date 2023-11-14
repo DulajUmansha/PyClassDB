@@ -51,7 +51,7 @@ class MainWindow(QMainWindow):
 
         tmpTable = Tmp_Tables()
         tmpTable.generate_parent()
-        tmpTable.generate_child()#TODO
+        tmpTable.generate_child(self.pageTable.get_tableNames())#TODO
        
 
 

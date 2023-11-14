@@ -1,3 +1,4 @@
+import os
 from Database.credential import Credential
 from Database.database import Database
 from Database.host import Host
@@ -58,6 +59,12 @@ class Database:
         """
     def generate(self, host:Host, credential:Credential, database:Database):
         self.load_the_code(host, credential, database)
-        file = open('database.py','w')
+        self.createFolder("output/database/")
+        file = open('output//database//database.py','w')
         file.write(self.parent_code)
         file.close()
+        
+    def createFolder(self,path):
+        if not os.path.exists(path):
+            os.makedirs(path)
+        return

@@ -29,7 +29,7 @@ class View:
 
     def generate_parent(self):
         self.load_the_parentCode()
-        file = open('view.py','w')
+        file = open('output//database//view.py','w')
         file.write(self.parent_code)
         file.close()
 
