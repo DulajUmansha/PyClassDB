@@ -17,11 +17,16 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>PyClassDB</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/icon/resource/icon/icon.png</normaloff>:/icon/resource/icon/icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
-background-color: rgb(0, 89, 146);
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 89, 146);
 }
 
 QLineEdit{
@@ -41,22 +46,15 @@ QPushButton:Hover{
 }
 </string>
   </property>
+  <property name="iconSize">
+   <size>
+    <width>50</width>
+    <height>50</height>
+   </size>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0" alignment="Qt::AlignHCenter|Qt::AlignBottom">
-     <widget class="QLabel" name="label">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>All Right Reserved @ 2023</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" alignment="Qt::AlignHCenter|Qt::AlignTop">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item alignment="Qt::AlignHCenter">
      <widget class="QLabel" name="label_2">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -75,8 +73,11 @@ QPushButton:Hover{
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item>
      <widget class="QStackedWidget" name="stackedWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -115,6 +116,7 @@ QPushButton:Hover{
           <property name="font">
            <font>
             <pointsize>20</pointsize>
+            <bold>true</bold>
            </font>
           </property>
           <property name="text">
@@ -126,20 +128,7 @@ QPushButton:Hover{
       </widget>
       <widget class="QWidget" name="page_host">
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="0">
-         <spacer name="verticalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>140</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="5" column="0" alignment="Qt::AlignHCenter">
+        <item row="7" column="0" alignment="Qt::AlignHCenter">
          <widget class="QPushButton" name="hostNextBtn">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -163,19 +152,7 @@ QPushButton:Hover{
           </property>
          </widget>
         </item>
-        <item row="1" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="label_4">
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Host</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0">
+        <item row="8" column="0">
          <spacer name="verticalSpacer_3">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -186,28 +163,25 @@ QPushButton:Hover{
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>319</height>
+            <height>270</height>
            </size>
           </property>
          </spacer>
         </item>
-        <item row="4" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLineEdit" name="lineEdit_host">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
           </property>
-          <property name="minimumSize">
+          <property name="sizeHint" stdset="0">
            <size>
-            <width>400</width>
-            <height>50</height>
+            <width>20</width>
+            <height>170</height>
            </size>
           </property>
-         </widget>
+         </spacer>
         </item>
-        <item row="2" column="0">
+        <item row="3" column="0">
          <spacer name="verticalSpacer">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -223,11 +197,138 @@ QPushButton:Hover{
           </property>
          </spacer>
         </item>
+        <item row="0" column="0" alignment="Qt::AlignLeft">
+         <widget class="QPushButton" name="hostBackBtn">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/icon/resource/icon/chevron-left.svg</normaloff>:/icon/resource/icon/chevron-left.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Host</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLineEdit" name="lineEdit_host">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>localhost</string>
+          </property>
+          <property name="maxLength">
+           <number>15</number>
+          </property>
+          <property name="placeholderText">
+           <string>127.0.0.1</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <spacer name="verticalSpacer_13">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>92</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_credentials">
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="6" column="0">
+        <item row="2" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Credentials</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>78</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="6" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QPushButton" name="credentialNextBtn">
+          <property name="minimumSize">
+           <size>
+            <width>140</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Next</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
          <spacer name="verticalSpacer_5">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -235,13 +336,32 @@ QPushButton:Hover{
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>40</height>
+            <height>116</height>
            </size>
           </property>
          </spacer>
         </item>
-        <item row="3" column="0">
+        <item row="5" column="0">
+         <spacer name="verticalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>28</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="0">
          <layout class="QFormLayout" name="formLayout">
+          <property name="horizontalSpacing">
+           <number>35</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_5">
             <property name="font">
@@ -261,6 +381,14 @@ QPushButton:Hover{
               <width>400</width>
               <height>50</height>
              </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>root</string>
             </property>
            </widget>
           </item>
@@ -300,11 +428,22 @@ QPushButton:Hover{
               <height>50</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
            </widget>
           </item>
          </layout>
         </item>
-        <item row="2" column="0">
+        <item row="3" column="0">
          <spacer name="verticalSpacer_2">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -315,84 +454,33 @@ QPushButton:Hover{
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>100</height>
+            <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
-        <item row="5" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QPushButton" name="credentialNextBtn">
-          <property name="minimumSize">
-           <size>
-            <width>140</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>15</pointsize>
-           </font>
-          </property>
+        <item row="0" column="0" alignment="Qt::AlignLeft">
+         <widget class="QPushButton" name="credentialBackBtn">
           <property name="text">
-           <string>Next</string>
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/icon/resource/icon/chevron-left.svg</normaloff>:/icon/resource/icon/chevron-left.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
           </property>
          </widget>
-        </item>
-        <item row="0" column="0">
-         <spacer name="verticalSpacer_6">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>100</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="1" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="label_7">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Credentials</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <spacer name="verticalSpacer_8">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Preferred</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_database">
        <layout class="QGridLayout" name="gridLayout_5">
-        <item row="0" column="0">
+        <item row="1" column="0">
          <spacer name="verticalSpacer_9">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -405,7 +493,94 @@ QPushButton:Hover{
           </property>
          </spacer>
         </item>
-        <item row="5" column="0" alignment="Qt::AlignHCenter">
+        <item row="7" column="0">
+         <spacer name="verticalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>180</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLineEdit" name="lineEdit_database">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QLabel" name="label_8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Database</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <spacer name="verticalSpacer_12">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0">
+         <spacer name="verticalSpacer_11">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="6" column="0" alignment="Qt::AlignHCenter">
          <widget class="QPushButton" name="databaseNextBtn">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -429,138 +604,260 @@ QPushButton:Hover{
           </property>
          </widget>
         </item>
-        <item row="1" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLabel" name="label_8">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-           </font>
-          </property>
+        <item row="0" column="0" alignment="Qt::AlignLeft">
+         <widget class="QPushButton" name="databaseBackBtn">
           <property name="text">
-           <string>Database</string>
+           <string/>
           </property>
-         </widget>
-        </item>
-        <item row="3" column="0" alignment="Qt::AlignHCenter">
-         <widget class="QLineEdit" name="lineEdit_database">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/icon/resource/icon/chevron-left.svg</normaloff>:/icon/resource/icon/chevron-left.svg</iconset>
           </property>
-          <property name="minimumSize">
+          <property name="iconSize">
            <size>
-            <width>400</width>
-            <height>50</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
          </widget>
-        </item>
-        <item row="6" column="0">
-         <spacer name="verticalSpacer_10">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>180</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="2" column="0">
-         <spacer name="verticalSpacer_11">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Preferred</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>100</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="4" column="0">
-         <spacer name="verticalSpacer_12">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Preferred</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_table">
-       <widget class="QWidget" name="layoutWidget">
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="tableBackBtn">
+          <property name="maximumSize">
+           <size>
+            <width>34</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/icon/resource/icon/chevron-left.svg</normaloff>:/icon/resource/icon/chevron-left.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QTableView" name="tableView">
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTableView{
+	border-radius:25px;
+}
+QHeaderView{
+	font: 700 15pt &quot;Segoe UI&quot;;
+	border-radius: 10px;
+	background-color: rgb(90, 56, 218);
+}
+
+QHeaderView::section
+{
+    text-align:center;
+    padding:3px;
+    margin:0px;
+	color: rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255,0);
+}
+
+QHeaderView::section:selected
+{
+    color:#FFFFFF;
+    border:1px solid #242424;
+}
+QScrollBar:vertical{
+    width:8px; 
+    border-style:flat;
+    border-radius: 4px;
+    border:0px;
+     background: #19191A;
+}
+QScrollBar::handle:vertical{
+    background: rgba(255,255,255,0.50);
+    border-radius: 4px;
+    width:8px;
+    min-height:91px;
+    border-style:flat;
+}
+QScrollBar::handle:vertical::hover{
+    background: rgba(255,255,255,0.90);
+    border-radius: 4px;
+    width:8px;
+}
+QScrollBar::handle:vertical::pressed{
+    background: rgba(255,255,255,0.90);
+    border-radius:4px;
+    width:8px;
+}
+QScrollBar::sub-page:vertical {
+    background: #19191A;
+border-style:flat;
+}
+QScrollBar::add-page:vertical {
+   background: #19191A;
+border-style:flat;
+}
+QScrollBar::add-line:vertical{
+   background: #19191A;
+}
+QScrollBar::sub-line:vertical {
+   background: #19191A;
+}
+QScrollBar:horizontal{
+    height:8px; 
+    border-style:flat;
+    border-radius: 4px;
+    border:0px;
+background: #19191A;
+}
+QScrollBar::handle:horizontal{
+    background: rgba(255,255,255,0.50);
+    border-radius: 4px;
+    height:8px;
+    min-width:91px;
+    border-style:flat;
+}
+QScrollBar::handle:horizontal::hover{
+    background: rgba(255,255,255,0.90);
+    border-radius: 4px;
+    height:8px;
+}
+QScrollBar::handle:horizontal::pressed{
+    background: rgba(255,255,255,0.90);
+    border-radius:4px;
+    height:8px;
+}
+QScrollBar::sub-page:horizontal {
+    background: #19191A;
+    border-style:flat;
+}
+QScrollBar::add-page:horizontal {
+   background: #19191A;
+    border-style:flat;
+}
+QScrollBar::sub-line:horizontal {
+   background: #19191A;
+}
+QScrollBar::add-line:horizontal{
+   background: #19191A;
+}
+
+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" alignment="Qt::AlignHCenter">
+         <widget class="QPushButton" name="tableNextBtn">
+          <property name="minimumSize">
+           <size>
+            <width>140</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Next</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_summery">
+       <widget class="QPushButton" name="summeryBackBtn">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>50</y>
-          <width>126</width>
-          <height>45</height>
+          <x>10</x>
+          <y>10</y>
+          <width>41</width>
+          <height>29</height>
          </rect>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="label_9">
-           <property name="font">
-            <font>
-             <pointsize>15</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>ALL</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="checkBox">
-           <property name="font">
-            <font>
-             <pointsize>15</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>30</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-           <property name="tristate">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resource.qrc">
+          <normaloff>:/icon/resource/icon/chevron-left.svg</normaloff>:/icon/resource/icon/chevron-left.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>500</y>
+          <width>140</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>140</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Finished</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>32</x>
+          <y>79</y>
+          <width>621</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resource.qrc">:/image/resource/image/taskFinished.png</pixmap>
+        </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_summery"/>
+     </widget>
+    </item>
+    <item alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>All Right Reserved @ 2023</string>
+      </property>
      </widget>
     </item>
    </layout>
@@ -569,5 +866,86 @@ QPushButton:Hover{
  <resources>
   <include location="resource.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>lineEdit_host</sender>
+   <signal>returnPressed()</signal>
+   <receiver>hostNextBtn</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>366</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>423</x>
+     <y>438</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_userName</sender>
+   <signal>returnPressed()</signal>
+   <receiver>lineEdit_password</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>650</x>
+     <y>356</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>684</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_password</sender>
+   <signal>returnPressed()</signal>
+   <receiver>credentialNextBtn</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>579</x>
+     <y>436</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>423</x>
+     <y>519</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_database</sender>
+   <signal>returnPressed()</signal>
+   <receiver>databaseNextBtn</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>406</x>
+     <y>378</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>407</x>
+     <y>439</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>366</x>
+     <y>589</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>714</x>
+     <y>629</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
