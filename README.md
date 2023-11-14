@@ -2,7 +2,7 @@
 
 Convert your MySQL database table into Python classes effortlessly, making MySQL and Python integration a breeze. This tool simplifies the process of connecting MySQL databases with Python applications, allowing developers to seamlessly work with their data.
 
-![Screenshot 2023-11-14 135511](https://github.com/DulajUmansha/PyClassDB/assets/89386135/88d7cb1e-dd71-4ee7-8512-e4c9fae4463d)
+![Screenshot 2023-11-14 135511](https://github.com/DulajUmansha/PyClassDB/assets/89386135/ea3d75e3-f5bf-4f78-bdc5-d05f93ddd974)
 
 ## Features
 
