@@ -2,8 +2,10 @@
     <qresource prefix="/image">
         <file>resource/image/Transform Your MySQL Table to Python Class.png</file>
         <file>resource/image/Mysql-host.png</file>
+        <file>resource/image/taskFinished.png</file>
     </qresource>
     <qresource prefix="/icon">
         <file>resource/icon/chevron-left.svg</file>
+        <file>resource/icon/icon.png</file>
     </qresource>
 </RCC>

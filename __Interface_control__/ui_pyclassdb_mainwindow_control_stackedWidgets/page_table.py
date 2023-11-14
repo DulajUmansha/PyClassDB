@@ -19,6 +19,7 @@ class page_table:
         self.mainUI.stackedWidget.setCurrentIndex(3)
 
     def fetchTables(self):
+        self.tableNames = []
         query = "SHOW tables"
         query = QSqlQuery(query)
         while query.next():

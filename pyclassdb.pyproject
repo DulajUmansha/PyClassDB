@@ -2,6 +2,6 @@
     "files": [
         "__Interface__/pyclassdb_mainwindow.ui",
         "__Interface__/resource.qrc",
-        "mainwindow.py"
+        "pyclassdb.py"
     ]
 }

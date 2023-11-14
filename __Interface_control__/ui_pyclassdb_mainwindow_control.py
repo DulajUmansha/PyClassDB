@@ -13,6 +13,7 @@ from __Interface_control__.ui_pyclassdb_mainwindow_control_stackedWidgets.page_t
 from __Interface_control__.ui_pyclassdb_mainwindow_control_stackedWidgets.page_summery import page_summery
 from template.tmp_database import Tmp_Database
 from template.tmp_tables import Tmp_Tables
+from template.tpm_view import Tmp_View
 
 
 class MainWindow(QMainWindow):
@@ -51,7 +52,13 @@ class MainWindow(QMainWindow):
 
         tmpTable = Tmp_Tables()
         tmpTable.generate_parent()
-        tmpTable.generate_child(self.pageTable.get_tableNames())#TODO
+        tmpTable.generate_child(self.pageTable.get_tableNames())
+
+        tmpView = Tmp_View()
+        tmpView.generate_parent()
+        tmpView.generate_child()#TODO
+
+        self.mainUI.stackedWidget.setCurrentIndex(5)
        
 
 
