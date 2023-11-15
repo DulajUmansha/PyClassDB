@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 10.0.83, 2023-11-13T20:06:44. -->
+<!-- Written by QtCreator 10.0.83, 2023-11-14T15:03:16. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -143,10 +143,10 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">mainwindow.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/Projects/pyclassdb/mainwindow.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Projects/pyclassdb/mainwindow.py</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\Projects\pyclassdb\mainwindow.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">pyclassdb.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/Projects/pyclassdb/pyclassdb.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Projects/pyclassdb/pyclassdb.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\Projects\pyclassdb\pyclassdb.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/Projects/pyclassdb</value>

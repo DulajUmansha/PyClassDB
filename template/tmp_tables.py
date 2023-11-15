@@ -96,15 +96,13 @@ class Table:
             self.conditionColumnData =tuple(kwargs.values())[0]
             query += " WHERE `{}` = '{}'".format(self.conditionColumnName,
                                                  self.conditionColumnData)
-            query += " AND `status` = 'active'"
 
         elif self.conditionColumnName and self.conditionColumnData:
             query += " WHERE `{}` = '{}'".format(self.conditionColumnName,
                                                  self.conditionColumnData)
-            query += " AND `status` = 'active'"
             
         else:
-            query += " WHERE `status` = 'active'"
+            pass
     
         query = QSqlQuery(query)
 
@@ -156,7 +154,7 @@ from database.table import Table
 class """ "{}".format(tableName)+"""(Table):
 \tdef __init__(self) -> None:
 \t\tsuper(""" "{}".format(tableName)+""",self).__init__()
-\t\tself.tableName = """ "{}".format(tableName)+""" #self.__class__.__name__
+\t\tself.tableName = """ "'{}'".format(tableName)+""" #self.__class__.__name__
 \t\t"""
         for var in self._init_variables:
             self.child_code = self.child_code + var
