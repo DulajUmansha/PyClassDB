@@ -41,7 +41,7 @@ pip install PySide6
 
 2. Open ``` pyclassdb.py ``` and run:
 
-https://github.com/DulajUmansha/PyClassDB/assets/89386135/d739b0a4-93ad-4021-9b8a-2a538599bd60
+https://github.com/DulajUmansha/PyClassDB/assets/89386135/332d31fb-60f7-4502-95d3-462696a0c48a
 
 3. Finally, you can see created python class file are in the output folder. 
 
