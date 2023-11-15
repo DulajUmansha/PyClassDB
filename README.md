@@ -86,7 +86,7 @@ https://github.com/DulajUmansha/PyClassDB/assets/89386135/332d31fb-60f7-4502-95d
    from database.city import city
 
    tbl_city = city()
-   tbl_city.set_Name("gampaha")
+   tbl_city.set_Name("ABC-city")
    tbl_city.set_CountryCode("AFG")
    tbl_city.insertData() # ex: INSERT INTO `city` (Name,CountryCode) VALUES ('ABC-city','AFG');
    ```
