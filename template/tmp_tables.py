@@ -62,7 +62,7 @@ class Table:
         elif args:
             values = args
             query += " VALUES(" + ",".join(["%s"]*len(values)) + ")"
-        print(query)
+
         Qquery = QSqlQuery()
         return(Qquery.exec(query))
 
@@ -168,7 +168,10 @@ class """ "{}".format(tableName)+"""(Table):
 \t\treturn super().retriveData()
 
 \tdef insertData(self, table=None, *args, **data) -> bool:
-\t\tself.set_tableName(self.tableName)
+\t\tself.set_tableName(self.tableName)\n"""+\
+"\t\tdata = {}".format("{" + ",".join("'"+x+"'" + ':self.' + x for x in self.table_variable) + "}")+\
+"""
+\t\tdata = {k: v for k, v in data.items() if v is not None}
 \t\treturn super().insertData(table, *args, **data)
 
 \tdef updateData(self, table=None, where=None, *args, **data) -> bool:
