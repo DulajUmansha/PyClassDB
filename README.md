@@ -47,4 +47,37 @@ https://github.com/DulajUmansha/PyClassDB/assets/89386135/d739b0a4-93ad-4021-9b8
 
 ![Screenshot 2023-11-15 095145](https://github.com/DulajUmansha/PyClassDB/assets/89386135/23253ce4-bca9-4bcb-995f-fcdc729fc248)
 
+## Example
 
+1. connect to the MySql Database:
+   ```python
+   from database.database import Database
+   
+   db = Database()
+   db.connect()
+   ```
+
+2. Retrive data from table:
+   ```python
+   from database.city import city
+
+   tbl_city = city()
+   data = tbl_city.retriveData()
+   ```
+   ```python
+   from database.city import city
+
+   tbl_city = city()
+   tbl_city.set_conditionData('Name','Malvinas Argentinas') # ex: SELECT * FROM city WHERE name = 'Malvinas Argentinas';
+   data = tbl_city.retriveData()
+   ```
+   ```python
+   from database.city import city
+
+   tbl_city = city()
+   tbl_city.set_columnFilter(['Name']) # ex: SELECT Name FROM city; 
+   data = tbl_city.retriveData()
+   data_list = []
+   for datum in data:
+       data_list = data_list + [value for key, value in datum.items()]
+   ```
