@@ -33,7 +33,18 @@ Make sure you have the following installed:
    git clone https://github.com/DulajUmansha/PyClassDB.git
    ```
 
-## Example
+## How to use
 
-![Screenshot 2023-11-14 144639](https://github.com/DulajUmansha/PyClassDB/assets/89386135/eeff8cf7-5bee-4823-a3ca-c92f80398ed9) ![Screenshot 2023-11-14 144742](https://github.com/DulajUmansha/PyClassDB/assets/89386135/ca584c30-87ef-4586-afb8-edbdd08fc1d1)![Screenshot 2023-11-14 144847](https://github.com/DulajUmansha/PyClassDB/assets/89386135/3cf7fff7-68f0-4fb0-89d8-e8e79acfeb58)
+1. Here is the sample MySql tables:
+   
+![Screenshot 2023-11-15 094200](https://github.com/DulajUmansha/PyClassDB/assets/89386135/5bb3727b-ec00-4176-8aba-884776ffa577)
+
+2. Open ``` pyclassdb.py ``` and run:
+
+https://github.com/DulajUmansha/PyClassDB/assets/89386135/d739b0a4-93ad-4021-9b8a-2a538599bd60
+
+3. Finally, you can see created python class file are in the output folder. 
+
+![Screenshot 2023-11-15 095145](https://github.com/DulajUmansha/PyClassDB/assets/89386135/23253ce4-bca9-4bcb-995f-fcdc729fc248)
+
 
