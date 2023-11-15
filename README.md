@@ -23,9 +23,9 @@ Make sure you have the following installed:
 
 1. Install PySide6:
    
-   ```bash
-   pip install PySide6
-   ```
+```bash
+pip install PySide6
+```
    
 2.Clone the repository:
 
