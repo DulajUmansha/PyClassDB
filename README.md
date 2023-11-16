@@ -22,48 +22,51 @@ Make sure you have the following installed:
 ### Installation
 
 1. Install PySide6:
-   
+
 ```bash
 pip install PySide6
 ```
-   
+
 2.Clone the repository:
 
-   ```bash
-   git clone https://github.com/DulajUmansha/PyClassDB.git
-   ```
+```bash
+git clone https://github.com/DulajUmansha/PyClassDB.git
+```
 
 ## How to use
 
 1. Here is the sample MySql tables:
-   
+
 ![Screenshot 2023-11-15 094200](https://github.com/DulajUmansha/PyClassDB/assets/89386135/5bb3727b-ec00-4176-8aba-884776ffa577)
 
-2. Open ``` pyclassdb.py ``` and run:
+2. Open `pyclassdb.py` and run:
 
 https://github.com/DulajUmansha/PyClassDB/assets/89386135/332d31fb-60f7-4502-95d3-462696a0c48a
 
-3. Finally, you can see created python class file are in the output folder. 
+3. Finally, you can see created python class file are in the output folder.
 
 ![Screenshot 2023-11-15 095145](https://github.com/DulajUmansha/PyClassDB/assets/89386135/23253ce4-bca9-4bcb-995f-fcdc729fc248)
 
 ## Example
 
 1. connect to the MySql Database:
+
    ```python
    from database.database import Database
-   
+
    db = Database()
    db.connect()
    ```
 
 2. Retrive data from table:
+
    ```python
    from database.city import city
 
    tbl_city = city()
    data = tbl_city.retriveData() # ex: SELECT * FROM city;
    ```
+
    ```python
    from database.city import city
 
@@ -71,17 +74,20 @@ https://github.com/DulajUmansha/PyClassDB/assets/89386135/332d31fb-60f7-4502-95d
    tbl_city.set_conditionData('Name','Malvinas Argentinas') # ex: SELECT * FROM city WHERE name = 'Malvinas Argentinas';
    data = tbl_city.retriveData()
    ```
+
    ```python
    from database.city import city
 
    tbl_city = city()
-   tbl_city.set_columnFilter(['Name']) # ex: SELECT Name FROM city; 
+   tbl_city.set_columnFilter(['Name']) # ex: SELECT Name FROM city;
    data = tbl_city.retriveData()
    data_list = []
    for datum in data:
        data_list = data_list + [value for key, value in datum.items()]
    ```
+
 3. Insert Data:
+
    ```python
    from database.city import city
 
@@ -89,4 +95,9 @@ https://github.com/DulajUmansha/PyClassDB/assets/89386135/332d31fb-60f7-4502-95d
    tbl_city.set_Name("ABC-city")
    tbl_city.set_CountryCode("AFG")
    tbl_city.insertData() # ex: INSERT INTO `city` (Name,CountryCode) VALUES ('ABC-city','AFG');
+   ```
+
+4. Disconnect MySql Database:
+   ```python
+   db.close()
    ```
