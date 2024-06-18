@@ -1,6 +1,7 @@
 import os
 from PySide6.QtSql import QSqlQuery
 
+
 class Tmp_Tables:
     def __init__(self) -> None:
         self.parent_code = None
@@ -8,6 +9,7 @@ class Tmp_Tables:
         self._init_variables = []
         self.table_variable = []
         self.getter_setter = []
+        self.retrive_variablesDict = []
 
     def load_the_parentCode(self):
         self.parent_code = """ 
@@ -136,7 +138,10 @@ class Table:
             values = tuple(kwargs.values())
             l = len(keys) - 1
             for i, key in enumerate(keys):
-                query += "`"+key+"` = '{}'".format(values[i])
+                if values[i] == 'null':
+                    query += "`"+key+"` = {}".format(values[i])
+                else:
+                    query += "`"+key+"` = '{}'".format(values[i])
                 if i < l:
                     query += ","
             
@@ -147,76 +152,151 @@ class Table:
 
         """
 
-    def load_the_childCode(self,tableName):
-        self.child_code = """
-from database.table import Table
+    def load_the_childCode(self, tableName):
+        self.child_code = (
+            """from Database.table import Table
 
-class """ "{}".format(tableName)+"""(Table):
+class """
+            "{}".format(tableName)
+            + """(Table):
 \tdef __init__(self) -> None:
-\t\tsuper(""" "{}".format(tableName)+""",self).__init__()
-\t\tself.tableName = """ "'{}'".format(tableName)+""" #self.__class__.__name__
+\t\tsuper("""
+            "{}".format(tableName)
+            + """,self).__init__()
+\t\tself.tableName = """
+            "'{}'".format(tableName)
+            + """ #self.__class__.__name__
 \t\t"""
+        )
         for var in self._init_variables:
             self.child_code = self.child_code + var
-        
+
         for func in self.getter_setter:
             self.child_code = self.child_code + func
 
-        self.child_code = self.child_code + """
+        self.child_code = (
+            self.child_code
+            + """
 \tdef retriveData(self):
 \t\tself.set_tableName(self.tableName)
-\t\treturn super().retriveData()
+\t\tresult = super().retriveData()
+\t\tif result == {}: return result
+\t\tif type(result) == dict:"""
+        )
+        for retrive_varDict in self.retrive_variablesDict:
+            self.child_code = self.child_code + retrive_varDict
+        self.child_code = (
+            self.child_code
+            + """
+\t\telif type(result) == list:"""
+)
+        for retrive_varList in self.retrive_variablesList:
+            self.child_code = self.child_code + retrive_varList
+        
+        self.child_code = (
+            self.child_code
+            +"""
+\t\treturn result
 
 \tdef insertData(self, table=None, *args, **data) -> bool:
-\t\tself.set_tableName(self.tableName)\n"""+\
-"\t\tdata = {}".format("{" + ",".join("'"+x+"'" + ':self.' + x for x in self.table_variable) + "}")+\
-"""
+\t\tself.set_tableName(self.tableName)\n"""
+            + "\t\tdata = {}".format(
+                "{"
+                + ",".join("'" + x + "'" + ":self." + x for x in self.table_variable)
+                + "}|data"
+            )
+            + """
 \t\tdata = {k: v for k, v in data.items() if v is not None}
 \t\treturn super().insertData(table, *args, **data)
 
 \tdef updateData(self, table=None, where=None, *args, **data) -> bool:
-\t\tself.set_tableName(self.tableName)
+\t\tself.set_tableName(self.tableName)\n"""
+            + "\t\tdata = {}".format(
+                "{"
+                + ",".join("'" + x + "'" + ":self." + x for x in self.table_variable)
+                + "}|data"
+            )
+            + """
+\t\tdata = {k: v for k, v in data.items() if v is not None}
 \t\treturn super().updateData(table, where, *args, **data)
 """
+        )
 
-    def fetch_variables(self,tableName):
+    def fetch_variables(self, tableName):
         self.table_variable = []
         tableColumnQuery = "SHOW columns FROM {}".format(tableName)
         tableColumnQuery = QSqlQuery(tableColumnQuery)
         while tableColumnQuery.next():
-            fieldData = tableColumnQuery.record().indexOf('Field')
+            fieldData = tableColumnQuery.record().indexOf("Field")
             self.table_variable.append(tableColumnQuery.value(fieldData))
 
     def load_the_childCode_variables(self):
         self._init_variables = []
         for var in self.table_variable:
-            self._init_variables.append("self."+var+" = None\n\t\t")
-    
+            self._init_variables.append("self." + var + " = None\n\t\t")
+
     def load_getters_setters(self):
         self.getter_setter = []
         for var in self.table_variable:
-            self.getter_setter.append("\n\tdef get_{variable}(self):\n\t\treturn self.{variable}\n\n\tdef set_{variable}(self,value):\n\t\tself.{variable} = value\n".format(variable = var))
+            self.getter_setter.append(
+                "\n\tdef get_{variable}(self):\n\t\treturn self.{variable}\n\n\tdef set_{variable}(self,value):\n\t\tself.{variable} = value\n".format(
+                    variable=var
+                )
+            )
+
+    def load_retrive_variablesforDict(self):
+        self.retrive_variablesDict = []
+        for var in self.table_variable:
+            self.retrive_variablesDict.append(
+                "\n\t\t\tif '{variable}' in result:\n\t\t\t\tself.{variable} = result['{variable}']".format(
+                    variable=var
+                )
+            )
+
+    def load_retrive_variablesforList(self):
+        self.retrive_variablesList = []
+        for var in self.table_variable:
+            self.retrive_variablesList.append(
+                "\n\t\t\t{variable}List = []".format(
+                    variable=var
+                )
+            )
+        self.retrive_variablesList.append("\n\t\t\tfor i in result:")
+        for var in self.table_variable:
+            self.retrive_variablesList.append(
+                "\n\t\t\t\tif '{variable}' in i:\n\t\t\t\t\t{variable}List.append(i['{variable}'])".format(
+                    variable=var
+                )
+            )
+        for var in self.table_variable:
+            self.retrive_variablesList.append(
+                "\n\t\t\tself.{variable} = {variable}List".format(
+                    variable=var
+                )
+            )
 
     def generate_parent(self):
         self.load_the_parentCode()
-        self.createFolder("output/database/")
-        file = open('output//database//table.py','w')
+        self.createFolder("output/Database/")
+        file = open("output//Database//table.py", "w")
         file.write(self.parent_code)
         file.close()
 
-    def generate_child(self,tableNames):
+    def generate_child(self, tableNames):
         for tableName in tableNames:
             tableName = tableName[0]
             self.fetch_variables(tableName)
             self.load_the_childCode_variables()
             self.load_getters_setters()
+            self.load_retrive_variablesforDict()
+            self.load_retrive_variablesforList()
             self.load_the_childCode(tableName)
-            self.createFolder("output/database/")
-            file = open('output//database//{}.py'.format(tableName),'w')
+            self.createFolder("output/Database/")
+            file = open("output//Database//{}.py".format(tableName), "w")
             file.write(self.child_code)
             file.close()
-            
-    def createFolder(self,path):
+
+    def createFolder(self, path):
         if not os.path.exists(path):
             os.makedirs(path)
         return
